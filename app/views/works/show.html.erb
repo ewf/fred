@@ -1,0 +1,21 @@
+<%= image_tag @work.image.url(:standard) %>
+<%= image_tag @work.image.url(:small) %>
+<%= image_tag @work.image.url(:thumb) %>
+<p>
+  <b>Title:</b>
+  <%=h @work.title %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%=h @work.year %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%=h @work.size %>
+</p>
+
+
+<%= link_to 'Edit', edit_work_path(@work) %> |
+<%= link_to 'Back to list', works_path %>

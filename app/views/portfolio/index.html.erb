@@ -1,0 +1,17 @@
+<h1>Portfolios</h1><br />
+<h3>current year is <%= @currentYear=2001 %></h3><br />
+
+<ul>
+	<% Year.all.each do |x| %>
+		<li><%= x.year %></li>
+	<%end%>
+</ul>
+
+<ul>
+	<% Work.find_all_by_year(@currentYear).each do |x| %>
+		<li><%= x.year %></li><%= image_tag x.image.url(:thumb) %>
+	<%end%>
+</ul>
+
+
+

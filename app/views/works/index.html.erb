@@ -1,0 +1,26 @@
+<h1>Listing of all works</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Size</th>
+  </tr>
+
+<% @works.each do |work| %>
+  <tr>
+  	<td><%= image_tag work.image.url(:thumb) %></td>
+    <td><%=h work.title %></td>
+    <td><%=h work.year %></td>
+    <td><%=h work.size %></td>
+    <td><%= link_to 'Show', work %></td>
+    <td><%= link_to 'Edit', edit_work_path(work) %></td>
+    <td><%= link_to 'Destroy', work, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New work', new_work_path %>
